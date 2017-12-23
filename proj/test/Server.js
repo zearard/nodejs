@@ -23,9 +23,9 @@ function Server()
 
 	//var host = env.NODE_IP || 'localhost';
 	//var port = env.NODE_PORT || 8080;
-	var host = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-	var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-
+	var host = process.argv[2] || process.env.IP   || process.env.OPENSHIFT_NODEJS_IP;// || '127.0.0.1';
+	var port = process.argv[3] || process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+/*
 	if(process.argv[2] && process.argv[3]) {
 		host = process.argv[2];
 		port = process.argv[3];
@@ -35,7 +35,7 @@ function Server()
 			port = process.env.OPENSHIFT_NODEJS_PORT;
 		}
 	}
-
+*/
 	var server = http.createServer(function (req, res) {
 		var url = req.url;
 		if (url == '/') url += 'index.html';
@@ -80,7 +80,10 @@ function Server()
 	});
 
 	server.listen(port, host, function () {
-		Msg.info('HTTP server pid: '+process.pid+' listen on host http://'+host+':'+port+'...');
+		if(host)
+			Msg.info('HTTP server pid: '+process.pid+' listen on host http://'+host+':'+port+' ...');
+		else
+			Msg.info('HTTP server pid: '+process.pid+' listen on port: '+port+' ...');
 	});
 }
 
