@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>test web server</title>
+</head>
+<body>
+	<header>
+		<p>This is a client for test web server</p>
+	</header>
+	<main>
+
+<div>
+Test request:
+<form method="post" action="/response-facebook-account-kit">
+  <input type="text" name="field1" value="f1">
+  <input type="text" name="field2" value="f2">
+  <button type="submit">Send post</button>
+</form>
+<form method="get" action="">
+  <input type="text" name="field1" value="f1">
+  <input type="text" name="field2" value="f2">
+  <button type="submit">Send get</button>
+</form>
+<p><a href="/tmp/log.txt">logs post request</a></p>
+</div>
+
+	</main>
+	<footer>
+		<p>developed by zearard</p>
+	</footer>
+</body>
+</html>

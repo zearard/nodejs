@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "0.1",
+  "description": "A sample Node.js app web server",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node proj/test/start.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zearard/nodejs.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs"
+  ]
+}
